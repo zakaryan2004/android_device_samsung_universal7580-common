@@ -153,6 +153,9 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
 
+# Camera
+TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
+
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so \
