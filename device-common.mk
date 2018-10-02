@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl.universal7580
 
 # Graphics
 PRODUCT_PACKAGES += \
