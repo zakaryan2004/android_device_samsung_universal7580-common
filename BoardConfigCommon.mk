@@ -175,9 +175,6 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
 
-# Camera
-TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
-
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
