@@ -25,7 +25,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # HWC
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwc.skip_dma_types=0,2
+    debug.hwc.skip_dma_types=0,2 \
+    debug.hwc.force_gpu=1 \
+    debug.egl.hw=0 \
+    debug.sf.hw=0 \
+    persist.sys.ui.hw=false
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
