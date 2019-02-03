@@ -11,7 +11,7 @@ allow init block_device:lnk_file { setattr };
 allow init tmpfs:lnk_file create_file_perms;
 
 # /sys/class/power_supply/battery and /sys/class/android_usb/android0
-allow init sysfs:dir w_dir_perms;
+#allow init sysfs:dir w_dir_perms;
 
 # Shim libs
 allow init cameraserver:process noatsecure;
@@ -33,3 +33,12 @@ allow init sysfs_camera_writable:filesystem associate;
 unix_socket_connect(init, property, rild)
 
 allow init { domain -lmkd -crash_dump }:process noatsecure;
+
+# Allow access to /proc/device-tree nodes
+r_dir_file(init, proc_dt_firmware)
+
+allow init sysfs_mmc:file { w_file_perms setattr };
+allow init sysfs_net:file rw_file_perms;
+allow init sysfs_graphics:file { rw_file_perms setattr };
+allow init sysfs_light_writable:file { rw_file_perms setattr };
+allow init sysfs_mdnie_writable:file { setattr };

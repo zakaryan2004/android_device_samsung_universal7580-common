@@ -97,9 +97,6 @@
 /data/gps/\.gpslogd\.pipe                            u:object_r:gps_data_file:s0
 /data/gps/nmeapipe                                   u:object_r:gps_data_file:s0
 
-# mobicore
-/data/misc/mcRegistry(/.*)?  u:object_r:tee_data_file:s0
-
 /data/biometrics(/.*)?       u:object_r:fingerprintd_data_file:s0
 
 # camera
