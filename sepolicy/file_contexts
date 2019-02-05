@@ -109,10 +109,12 @@
 /sys/class/lcd(/.*)?         -- u:object_r:sysfs_writable:s0
 /sys/class/sec(/.*)?         -- u:object_r:sysfs_sec:s0
 
+# ion
+/sys/class/ion_cma/ion_video_ext/isolated u:object_r:sysfs_writable:s0
 
 # bluetooth
-/sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/state  u:object_r:sysfs_bluetooth_writable:s0
-/sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/type   u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0/state                     u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0/type                      u:object_r:sysfs_bluetooth_writable:s0
 
 # camera
 /sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera_writable:s0
