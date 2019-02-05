@@ -31,7 +31,7 @@ allow cpboot-daemon block_device:dir r_dir_perms;
 allow cpboot-daemon radio_block_device:blk_file r_file_perms;
 
 # /dev/mipi-lli/lli_control
-allow cpboot-daemon sysfs_mipi_writable:file rw_file_perms;
+allow cpboot-daemon sysfs_mipi:file rw_file_perms;
 
 # /efs
 allow cpboot-daemon efs_file:dir r_dir_perms;
