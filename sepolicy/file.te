@@ -21,6 +21,9 @@ type gps_socket, file_type;
 # proc
 type proc_dirty_ratio, fs_type, proc_type;
 type proc_dt_firmware, fs_type, proc_type;
+type proc_oom,  fs_type, proc_type;
+type proc_reset_reason, fs_type, proc_type;
+type proc_vm, fs_type, proc_type;
 
 ### sysfs types
 type sysfs_writable, fs_type, sysfs_type, mlstrustedobject;
@@ -28,10 +31,12 @@ type sysfs_mdnie_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_mipi_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_multipdp_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_sec, fs_type, sysfs_type, fs_type, mlstrustedobject;
+type sysfs_sensors, fs_type, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_camera_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_gps, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_light_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_wifi_writable, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_battery_writeable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_usb_supply, sysfs_type, fs_type;
 type sysfs_mmc, sysfs_type, fs_type;
 type sysfs_graphics, sysfs_type, fs_type;

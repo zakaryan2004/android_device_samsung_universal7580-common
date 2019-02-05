@@ -107,12 +107,15 @@
 /sys/class/power_supply/battery/music -- u:object_r:sysfs_writable:s0
 /sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs_writable:s0
 /sys/class/lcd(/.*)?         -- u:object_r:sysfs_writable:s0
-/sys/class/sec(/.*)?         -- u:object_r:sysfs_sec:s0
+/sys/class/sec(/.*)?                            u:object_r:sysfs_sec:s0
+/sys/class/sensors(/.*)?                        u:object_r:sysfs_sensors:s0
 
+# ion
+/sys/class/ion_cma/ion_video_ext/isolated u:object_r:sysfs_writable:s0
 
 # bluetooth
-/sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/state  u:object_r:sysfs_bluetooth_writable:s0
-/sys/devices/bluetooth.[0-9]*/rfkill/rfkill0/type   u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0/state                     u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0/type                      u:object_r:sysfs_bluetooth_writable:s0
 
 # camera
 /sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera_writable:s0
@@ -127,6 +130,9 @@
 /sys/devices/soc0/machine                           u:object_r:sysfs_gps:s0
 /sys/devices/soc0/revision                          u:object_r:sysfs_gps:s0
 /sys/devices/139c0000.pinctrl/gpio/gpio137/value    u:object_r:sysfs_gps:s0
+
+# power
+/sys/devices/battery.[0-9]*/power_supply/battery/batt_capacity_max	u:object_r:sysfs_battery_writeable:s0
 
 # rild
 /sys/devices/virtual/misc/multipdp(/.*)     u:object_r:sysfs_multipdp_writable:s0
@@ -145,9 +151,17 @@
 /sys/devices/14800000.dsim/backlight/panel(/.*)?        u:object_r:sysfs_light_writable:s0
 /sys/class/leds(/.*)?                                   u:object_r:sysfs_light_writable:s0
 /sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_light_writable:s0
+/sys/class/lcd/panel/power_reduce                       u:object_r:sysfs_light_writable:s0
 
 # Wifi
 /sys/module/dhd/parameters/firmware_path            u:object_r:sysfs_wifi_writable:s0
+
+
+/proc/sys/vm/oom_kill_allocating_task               u:object_r:proc_oom:s0
+/proc/sys/vm/panic_on_oom                           u:object_r:proc_oom:s0
+/proc/reset_reason                                  u:object_r:proc_reset_reason:s0
+/proc/sys/vm/laptop_mode                            u:object_r:proc_vm:s0
+/proc/sys/vm/block_dump                             u:object_r:proc_vm:s0
 
 ####################################
 # deamons

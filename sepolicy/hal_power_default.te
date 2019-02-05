@@ -9,3 +9,7 @@ allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 # Lights
 allow hal_power_default sysfs_light_writable:dir search;
 allow hal_power_default sysfs_light_writable:file rw_file_perms;
+
+# Graphics
+allow hal_power_default sysfs_graphics:dir search;
+allow hal_power_default sysfs_graphics:file rw_file_perms;

@@ -25,10 +25,23 @@ allow init sysfs:lnk_file setattr;
 
 # read/chown mDNIE symlinks
 allow init sysfs_mdnie_writable:lnk_file { read setattr };
+allow init sysfs_mdnie_writable:file { open write };
 
 # read/chown camera firmware
 allow init sysfs_camera_writable:file { relabelto setattr };
 allow init sysfs_camera_writable:filesystem associate;
+
+# WiFi firmware permissions
+allow init sysfs_wifi_writable:file setattr;
+
+# BT permissions
+allow init sysfs_bluetooth_writable:file setattr;
+
+# GPS permissions
+allow init sysfs_gps:file setattr;
+
+# Battery capacity permission
+allow init sysfs_battery_writeable:file rw_file_perms;
 
 unix_socket_connect(init, property, rild)
 
@@ -42,3 +55,13 @@ allow init sysfs_net:file rw_file_perms;
 allow init sysfs_graphics:file { rw_file_perms setattr };
 allow init sysfs_light_writable:file { rw_file_perms setattr };
 allow init sysfs_mdnie_writable:file { setattr };
+allow init sysfs_sec:file { rw_file_perms setattr };
+allow init sysfs_sec:lnk_file read;
+allow init sysfs_sensors:file { rw_file_perms setattr };
+
+# Proc files
+allow init proc_oom:file rw_file_perms;
+allow init proc_reset_reason:file rw_file_perms;
+allow init proc_dirty_ratio:file rw_file_perms;
+allow init proc_vm:file rw_file_perms;
+
